@@ -1,0 +1,23 @@
+link: https://www.youtube.com/watch?v=JmSb1VFoP7w
+This video demonstrates how to great single page application and routes
+management using plain javascript (vanilla)
+
+# Project setup
+---------------
+npm init -y
+: Initialise the project directory to create package.json file
+
+npm i express
+
+npm list express
+: check the version of express installed
+
+
+Start server
+------------
+node ./src/js/server.js
+
+npx http-server . -p 3900
+: launch a server to serve the files in a current directory
+
+
