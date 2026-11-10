@@ -18,7 +18,7 @@ const router = async () => {
     });
     let matchRoute = matchRoutes.find( route => route.isMatch );
         
-    console.log( matchRoute );
+    console.log( matchRoutes );
 };
 
 
