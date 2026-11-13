@@ -3,20 +3,22 @@ const path = require("path");
 
 const svr = express();
 
-const pathParentFolder = path.resolve(__dirname, "../..")
+const pathProjDir = path.resolve(__dirname, "../..")
 console.log(__dirname);
-console.log(pathParentFolder);
+console.log(pathProjDir);
 
 // middleware to server static files.
-svr.use("/static", express.static(path.join(pathParentFolder, "public")));
+svr.use("/static", express.static(path.join(pathProjDir, "public")));
+
 // This wildcard will match all and any urls request from clients.
 // "all" is just a name assigned to it.
 svr.get("/{*all}", (req, res) => {
-    res.sendFile(path.join(pathParentFolder, "templates", "index.html"));
+    res.sendFile(path.join(pathProjDir, "templates", "index.html"));
 })
 
 
 
-svr.listen(process.env.PORT || 5500 , () => {
-    console.log("Server running...");
+const portNbr = 5500;
+svr.listen(process.env.PORT || portNbr , () => {
+    console.log("Server running...", portNbr );
 });
